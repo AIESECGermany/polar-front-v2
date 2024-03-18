@@ -33,7 +33,7 @@ export class MemberService {
   public getMembers(archived: boolean): Observable<MemberData[]> {
     if(archived) {
       return this.http.get<MemberData[]>(this.previewAllMembersUrl, { params: { lc: this.authService.user.lc }});
-    }else {
+    } else {
       return this.http.get<MemberData[]>(this.previewCurrentMembersUrl, { params: { lc: this.authService.user.lc }});
     }
   }
